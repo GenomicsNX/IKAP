@@ -10,6 +10,7 @@ Note: IKAP will, by default, regress out the percentage of mitochondrial gene co
 Please install the following R libraries for running IKAP:
 [Seurat](https://satijalab.org/seurat/install.html), dplyr, reshape2, PRROC, WriteXLS, rpart, stringr, and rpart.plot
 
+<div class="paragraph"><br><br></div>
 
 Usage:
 -------
@@ -43,6 +44,7 @@ Decision tree output files. A decision tree is built using marker genes for ever
 
 tSNE plots for candidate sets.
 
+<div class="paragraph"><br><br></div>
 
 
 
@@ -69,6 +71,7 @@ The main function runs the following steps:
 
  
 
+<div class="paragraph"><br><br></div>
 
 
  
