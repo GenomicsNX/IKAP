@@ -44,15 +44,15 @@ Functions in the R script:
 
 - IKAP:
 The main function runs the following steps: 
-    (1) regress out confounding variables and scale data using Seurat::ScaleData; 
-(2) find variable genes for principal component analysis (PCA) using Seurat::FindVariableGenes; 
-(3) perform PCA using Seurat::RunPCA; 
-(4) estimate k.max; 
-(5) explore ranges of k and nPC and compute gap statistics; 
-(6) select candidate sets; 
-(7) compute marker genes using Seurat::FindAllMarkers; 
-(8) build decision trees; 
-(9) plot tSNE plots and PC_K.pdf 
+    - (1) regress out confounding variables and scale data using Seurat::ScaleData; 
+    - (2) find variable genes for principal component analysis (PCA) using Seurat::FindVariableGenes; 
+    - (3) perform PCA using Seurat::RunPCA; 
+    - (4) estimate k.max; 
+    - (5) explore ranges of k and nPC and compute gap statistics; 
+    - (6) select candidate sets; 
+    - (7) compute marker genes using Seurat::FindAllMarkers; 
+    - (8) build decision trees; 
+    - (9) plot tSNE plots and PC_K.pdf 
 
  
 - GapStatistic, ObservedLogW, and ExpectedLogW (5):
