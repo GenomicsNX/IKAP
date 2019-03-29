@@ -1,5 +1,3 @@
-# IKAP
-
 IKAP – "Identifying K mAjor cell Population groups in single-cell RNA-seq analysis"
 ==================================================================================
 
@@ -12,6 +10,7 @@ Note: IKAP will, by default, regress out the percentage of mitochondrial gene co
 Please install the following R libraries for running IKAP:
 Seurat, dplyr, reshape2, PRROC, WriteXLS, rpart, stringr, and rpart.plot
 
+
 Usage:
 -------
 
@@ -22,10 +21,10 @@ Returned data and output files (saved in the output directory, default = ./IKAP/
 Seurat object:
 IKAP returns a Seurat object with all explored sets in the metadata data frame.
 
-PC_K.pdf:
+- PC_K.pdf:
 The heatmap shows the statistics for every combination of r and nPC explored. Candidate sets are marked as 'X' with the best marked as 'B'. The corresponding cell membership can be found in the metadata of the returned Seurat object with column name 'PC?K?'. For example, if 'B' (the best set) is marked at nPC = 20 and k = 8, the corresponding cell membership is stored in column 'PC20K8' in the metadata.
 
-data.xls and markers.all.rds:
+- data.xls and markers.all.rds:
 It saves the statistics (plotted in PC_K.pdf) for determining candidate sets in the first sheet. The other sheets display the (upregulated) marker genes for candidate sets. The R object, markers.all.rds, contains a data frame of marker genes for every candidate set.
 
 - *.png:
@@ -36,6 +35,8 @@ Decision tree output files. A decision tree is built using marker genes for ever
 
 - *_tSNE.pdf:
 tSNE plots for candidate sets.
+
+
 
 
 Functions in the R script:
@@ -61,6 +62,8 @@ Build decision trees for all cell groups in all candidate sets using the R packa
 
 - PlotSummary (9):
 Mark the best set based on classification error and plot PC_K.pdf.
+
+
 
 
 Contact
