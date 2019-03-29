@@ -44,7 +44,7 @@ Functions in the R script:
 
 - IKAP:
 The main function runs the following steps: 
-(1) regress out confounding variables and scale data using Seurat::ScaleData; 
+    (1) regress out confounding variables and scale data using Seurat::ScaleData; 
 (2) find variable genes for principal component analysis (PCA) using Seurat::FindVariableGenes; 
 (3) perform PCA using Seurat::RunPCA; 
 (4) estimate k.max; 
