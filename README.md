@@ -24,18 +24,23 @@ Seurat object:
 IKAP returns a Seurat object with all explored sets in the metadata data frame.
 
 - **_PC_K.pdf_**:
+
 The heatmap shows the statistics for every combination of r and nPC explored. Candidate sets are marked as 'X' with the best marked as 'B'. The corresponding cell membership can be found in the metadata of the returned Seurat object with column name 'PC?K?'. For example, if 'B' (the best set) is marked at nPC = 20 and k = 8, the corresponding cell membership is stored in column 'PC20K8' in the metadata.
 
 - **_data.xls_** and **_markers.all.rds_**:
+
 It saves the statistics (plotted in PC_K.pdf) for determining candidate sets in the first sheet. The other sheets display the (upregulated) marker genes for candidate sets. The R object, markers.all.rds, contains a data frame of marker genes for every candidate set.
 
 - **_*.png_**:
+
 Heatmaps show expression of top 10 (ranked by expression fold change) marker genes from each cell group for candidate sets. They are plotted using Seurat DoHeatmap function.
 
 - **_DT_plot.pdf_**, **_DT_summary.rds_**, and **_DT.rds_**:
+
 Decision tree output files. A decision tree is built using marker genes for every cell group in every candidate set using R package rpart. All decision trees are plotted in DT_plot.pdf. Classification errors are summarized in the R object DT_summary.rds. DT.rds is the output object from rpart.
 
-- **_*_tSNE.pdf_**:
+- **_*tSNE.pdf_**:
+
 tSNE plots for candidate sets.
 
  
