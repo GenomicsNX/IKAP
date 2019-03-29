@@ -30,7 +30,7 @@ It saves the statistics (plotted in PC_K.pdf) for determining candidate sets in 
 - *.png:
 Heatmaps show expression of top 10 (ranked by expression fold change) marker genes from each cell group for candidate sets. They are plotted using Seurat DoHeatmap function.
 
-DT_plot.pdf, DT_summary.rds, and DT.rds:
+- DT_plot.pdf, DT_summary.rds, and DT.rds:
 Decision tree output files. A decision tree is built using marker genes for every cell group in every candidate set using R package rpart. All decision trees are plotted in DT_plot.pdf. Classification errors are summarized in the R object DT_summary.rds. DT.rds is the output object from rpart.
 
 - *_tSNE.pdf:
