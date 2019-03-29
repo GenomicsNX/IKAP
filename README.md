@@ -58,16 +58,16 @@ The main function runs the following steps:
     - (3) perform PCA using Seurat::RunPCA; 
     - (4) estimate k.max; 
     - (5) explore ranges of k and nPC and compute gap statistics; 
-        - GapStatistic, ObservedLogW, and ExpectedLogW (5): Compute gap statistics given a data matrix (used for computing data point Euclidean distances) and K sets of clusters with k = 1 … K. GapStatistic calls ObservedLogW and ExpectedLogW to compute sum of within-group distances for observed data and random data respectively.
+        - GapStatistic, ObservedLogW, and ExpectedLogW: <br>Compute gap statistics given a data matrix (used for computing data point Euclidean distances) and K sets of clusters with k = 1 … K. GapStatistic calls ObservedLogW and ExpectedLogW to compute sum of within-group distances for observed data and random data respectively.
         - BottomUpMerge and NearestCluster (5): Generate sets of cell groups by exploring ranges of k and nPC. BottomUpMerge finds k.max groups using Seurat::FindClusters and gradually merges two nearest clusters measured by NearestCluster.
     - (6) select candidate sets; 
-        - SelectCandidate (6): Select candidate sets based on gap statistics.
+        - SelectCandidate: <br>Select candidate sets based on gap statistics.
     - (7) compute marker genes using Seurat::FindAllMarkers; 
-        - ComputeMarkers (7): Compute marker genes for all cell groups in all candidate sets using Seurat::FindAllMarkers. In addition, compute Area Under the ROC curve (AUROC) for each marker genes using the R package PRROC. Plot marker gene heatmap(s) using Seurat::DoHeatmap.
+        - ComputeMarkers: <br>Compute marker genes for all cell groups in all candidate sets using Seurat::FindAllMarkers. In addition, compute Area Under the ROC curve (AUROC) for each marker genes using the R package PRROC. Plot marker gene heatmap(s) using Seurat::DoHeatmap.
     - (8) build decision trees; 
-        - DecisionTree (8): Build decision trees for all cell groups in all candidate sets using the R package rpart and compute the classification error for each candidate set.
+        - DecisionTree: <br>Build decision trees for all cell groups in all candidate sets using the R package rpart and compute the classification error for each candidate set.
     - (9) plot tSNE plots and PC_K.pdf 
-        - PlotSummary (9): Mark the best set based on classification error and plot PC_K.pdf
+        - PlotSummary: <br>Mark the best set based on classification error and plot PC_K.pdf
 
  
 
