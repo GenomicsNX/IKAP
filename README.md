@@ -1,5 +1,5 @@
-IKAP – "Identifying K mAjor cell Population groups in single-cell RNA-seq analysis"
-==================================================================================
+IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analysis
+------------------------------
 
 This R script is accompanying software for the paper: IKAP – "Identifying K mAjor cell Population groups in single-cell RNA-seq analysis", with authors Yun-Ching Chen, Abhilash Suresh, Chingiz Underbayev, Clare Sun, Komudi Singh, Fayaz Seifuddin, Adrian Wiestner, and Mehdi Pirooznia.
 
