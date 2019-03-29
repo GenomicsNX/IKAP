@@ -8,13 +8,15 @@ The main function, IKAP, takes a Seurat object with the normalized expression ma
 Note: IKAP will, by default, regress out the percentage of mitochondrial gene counts and total UMI counts and scale the expression matrix using Seurat ScaleData function. These two values should be save in Seurat metadata with column names 'percent.mito' and 'nUMI' respectively. If you want to regress out different confounding variables or use different column names, please save these variables in Seurat metadata and set 'confounders' (an IKAP parameter) as their column names in the Seurat metadata data frame.
 
 Please install the following R libraries for running IKAP:
-Seurat, dplyr, reshape2, PRROC, WriteXLS, rpart, stringr, and rpart.plot
+[Seurat](https://satijalab.org/seurat/install.html), dplyr, reshape2, PRROC, WriteXLS, rpart, stringr, and rpart.plot
 
 
 Usage:
 -------
 
+```
 Seurat_obj <- IKAP(Seurat_obj, out.dir = "./IKAP")
+```
 
 Returned data and output files (saved in the output directory, default = ./IKAP/):
 
