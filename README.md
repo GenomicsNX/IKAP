@@ -52,7 +52,7 @@ The main function runs the following steps:
 (6) select candidate sets; 
 (7) compute marker genes using Seurat::FindAllMarkers; 
 (8) build decision trees; 
-(9) plot tSNE plots and PC_K.pdf
+(9) plot tSNE plots and PC_K.pdf 
 
  
 - GapStatistic, ObservedLogW, and ExpectedLogW (5):
