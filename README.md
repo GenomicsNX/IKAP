@@ -12,9 +12,9 @@ Please install the following R libraries for running IKAP: <br>
 
 <div class="paragraph"><br><br></div>
 
-
+IKAP Workflow 
+--------
 <p align="center">
-  IKAP Workflow 
   <img src="Figure 1.png" width="933" height="1050" title="IKAP workflow">
 </p>
 
