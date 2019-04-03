@@ -12,6 +12,10 @@ Please install the following R libraries for running IKAP: <br>
 
 <div class="paragraph"><br><br></div>
 
+
+![IKAP workflow](Figure 1.png?raw=true "IKAP workflow")
+
+
 Usage:
 -------
 
