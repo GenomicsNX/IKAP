@@ -14,7 +14,7 @@ Please install the following R libraries for running IKAP: <br>
 
 
 <p align="center">
-  <img src="Figure 1.png" width="700" height="787" title="IKAP workflow">
+  <img src="Figure 1.png" width="933" height="1050" title="IKAP workflow">
 </p>
 
 
