@@ -1,10 +1,11 @@
 IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analysis
 ------------------------------
 
+<br><br>
 > <div><b>BioRxiv preprint:</b><h3><b>IKAP - Identifying K mAjor cell Population groups in single-cell RNA-seq analysis</b></h3>Yun-Ching Chen, Abhilash Suresh, Chingiz Underbayev, Clare Sun, Komudi Singh, <br>Fayaz Seifuddin, Adrian Wiestner, Mehdi Pirooznia<br>doi: <a href="https://doi.org/10.1101/596817" class="" classname="" target="_blank" name="">https://doi.org/10.1101/596817</a> 
 
 
-
+<br>
 The main function, IKAP, takes a Seurat object with the normalized expression matrix and other parameters set by default values if not specified. IKAP explores sets of cell groups (clustering) by varying resolution (r) and the number of top principal components (nPC) for Seurat SNN clustering and picks a few candidate sets among all explored sets with one marked as the best that likely produces distinguishing marker genes.
 
 Note: IKAP will, by default, regress out the percentage of mitochondrial gene counts and total UMI counts and scale the expression matrix using Seurat ScaleData function. These two values should be save in Seurat metadata with column names 'percent.mito' and 'nUMI' respectively. If you want to regress out different confounding variables or use different column names, please save these variables in Seurat metadata and set 'confounders' (an IKAP parameter) as their column names in the Seurat metadata data frame.
