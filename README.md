@@ -13,10 +13,12 @@ IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analy
 Installation
 -----------
 
-Please install the following R libraries for running IKAP: <br>
+Please install the following R libraries before installing IKAP: <br>
 [Seurat](https://satijalab.org/seurat/install.html), [dplyr](https://cloud.r-project.org/web/packages/dplyr), [reshape2](https://cran.r-project.org/web/packages/reshape2), [PRROC](https://cran.r-project.org/web/packages/PRROC/), [WriteXLS](https://cran.r-project.org/web/packages/WriteXLS/), [rpart](https://cran.r-project.org/web/packages/rpart/), [stringr](https://cran.r-project.org/web/packages/stringr), and [rpart.plot](https://cran.r-project.org/web/packages/rpart.plot) 
 
-
+<br>
+<br>
+<h3>IKAP installation:</h3>
 
 <ol>
   <li>
