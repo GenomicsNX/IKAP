@@ -18,7 +18,7 @@ Please install the following R libraries before installing IKAP: <br>
 
 <br>
 <br>
-<h3>IKAP installation:</h3>
+<h4>IKAP installation:</h4>
 
 <ol>
   <li>
