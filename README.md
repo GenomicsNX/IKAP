@@ -8,6 +8,42 @@ IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analy
   >  <b>doi:</b> <a href="https://doi.org/10.1101/596817" class="" classname="" target="_blank" name="">https://doi.org/10.1101/596817</a></div> 
 
 
+Installation
+-----------
+
+<ol>
+  <li>
+    <p>First, you need to install the
+<a href="https://github.com/hadley/devtools">devtools</a> package. You can do
+this from <a href="https://cran.r-project.org">CRAN</a>. Invoke R and then type</p>
+
+```{r, eval = FALSE}
+install.packages("devtools")
+```
+  </li>
+  <li>
+    <p>Load the devtools package.</p>
+
+```{r, eval = FALSE}
+library(devtools)
+```
+  </li>
+  <li>
+    <p>Install IKAP </p>
+
+```{r, eval = FALSE}
+devtools::install_github("NHLBI-BCB/IKAP")
+```
+  </li>
+</ol>
+
+
+
+
+
+
+
+
 <br>
 The main function, IKAP, takes a Seurat object with the normalized expression matrix and other parameters set by default values if not specified. IKAP explores sets of cell groups (clustering) by varying resolution (r) and the number of top principal components (nPC) for Seurat SNN clustering and picks a few candidate sets among all explored sets with one marked as the best that likely produces distinguishing marker genes.
 
