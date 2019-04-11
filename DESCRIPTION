@@ -1,0 +1,11 @@
+Package: IKAP
+Title: IKAP: Identifying K mAjor cell Population group in single cell analysis
+Version: 0.0.0.9000
+Authors@R: person("Yun-Ching", "Chen", email = "yun-ching.chen@nih.gov", role = c("aut", "cre"))
+Description: IKAP identifies candidate set(s) of major cell groups using the single cell analysis R package Seurat by evaluating sets of possible cell groups generated using different parameters in Seurat SNN clustering (i.e. resulotion r and the number of top principal components (nPC)). The results (tables and plots) are saved in the output directory. A Seurat object is returned with all sets of evaluated cell groups saved in the metadata data frame.
+Depends: R (>= 3.4.2)
+License: MIT License
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1.9000
+Imports: Seurat,dplyr,reshape2,PRROC,WriteXLS,rpart,stringr,rpart.plot
