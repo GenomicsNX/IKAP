@@ -24,6 +24,8 @@
 #' 
 #' saveRDS(sobj.new, file = "./IKAP/sobj.new.rds")
 
+
+
 IKAP <- function(sobj, pcs = NA, pc.range = 20, k.max = NA, r.kmax.est = 1.5, out.dir = "./IKAP", scale.data = TRUE,
                  confounders = c('nUMI','percent.mito'), plot.decision.tree = TRUE, random.seed = 0){
   
