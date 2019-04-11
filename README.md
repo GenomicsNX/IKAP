@@ -13,6 +13,11 @@ IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analy
 Installation
 -----------
 
+Please install the following R libraries for running IKAP: <br>
+[Seurat](https://satijalab.org/seurat/install.html), [dplyr](https://cloud.r-project.org/web/packages/dplyr), [reshape2](https://cran.r-project.org/web/packages/reshape2), [PRROC](https://cran.r-project.org/web/packages/PRROC/), [WriteXLS](https://cran.r-project.org/web/packages/WriteXLS/), [rpart](https://cran.r-project.org/web/packages/rpart/), [stringr](https://cran.r-project.org/web/packages/stringr), and [rpart.plot](https://cran.r-project.org/web/packages/rpart.plot) 
+
+
+
 <ol>
   <li>
     <p>First, you need to install the
@@ -51,9 +56,6 @@ The main function, IKAP, takes a Seurat object with the normalized expression ma
 
 Note: IKAP will, by default, regress out the percentage of mitochondrial gene counts and total UMI counts and scale the expression matrix using Seurat ScaleData function. These two values should be save in Seurat metadata with column names 'percent.mito' and 'nUMI' respectively. If you want to regress out different confounding variables or use different column names, please save these variables in Seurat metadata and set 'confounders' (an IKAP parameter) as their column names in the Seurat metadata data frame.
 
-<!-- Please install the following R libraries for running IKAP: <br>
-[Seurat](https://satijalab.org/seurat/install.html), [dplyr](https://cloud.r-project.org/web/packages/dplyr), [reshape2](https://cran.r-project.org/web/packages/reshape2), [PRROC](https://cran.r-project.org/web/packages/PRROC/), [WriteXLS](https://cran.r-project.org/web/packages/WriteXLS/), [rpart](https://cran.r-project.org/web/packages/rpart/), [stringr](https://cran.r-project.org/web/packages/stringr), and [rpart.plot](https://cran.r-project.org/web/packages/rpart.plot) 
--->
 
 <div class="paragraph"><br><br></div>
 
