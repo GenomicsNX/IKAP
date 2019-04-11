@@ -17,7 +17,6 @@ Please install the following R libraries before installing IKAP: <br>
 [Seurat](https://satijalab.org/seurat/install.html), [dplyr](https://cloud.r-project.org/web/packages/dplyr), [reshape2](https://cran.r-project.org/web/packages/reshape2), [PRROC](https://cran.r-project.org/web/packages/PRROC/), [WriteXLS](https://cran.r-project.org/web/packages/WriteXLS/), [rpart](https://cran.r-project.org/web/packages/rpart/), [stringr](https://cran.r-project.org/web/packages/stringr), and [rpart.plot](https://cran.r-project.org/web/packages/rpart.plot) 
 
 <br>
-<br>
 <h4>IKAP installation:</h4>
 
 <ol>
