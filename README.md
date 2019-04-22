@@ -133,6 +133,11 @@ The main function runs the following steps:
  
  
  
+License
+--------
+MIT license: https://opensource.org/licenses/MIT 
+ 
+<br><br> 
 Contact
 --------
 If you have any question, please contact: yun-ching.chen@nih.gov
