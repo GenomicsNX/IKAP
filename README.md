@@ -5,7 +5,7 @@ IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analy
 
 > <div>Article:<br><b>IKAP - Identifying K mAjor cell Population groups in single-cell RNA-seq analysis</b>
 >  <br>Yun-Ching Chen, Abhilash Suresh, Chingiz Underbayev, Clare Sun, Komudi Singh, Fayaz Seifuddin, Adrian Wiestner, Mehdi Pirooznia. 
-  >  <b>doi:</b> <a href="https://academic.oup.com/gigascience/article/8/10/giz121/5579995" class="" classname="" target="_blank" name="">https://academic.oup.com/gigascience/article/8/10/giz121/5579995</a></div> 
+  >  <a href="https://academic.oup.com/gigascience/article/8/10/giz121/5579995" class="" classname="" target="_blank" name="">https://academic.oup.com/gigascience/article/8/10/giz121/5579995</a></div> 
 
 <br>
 
