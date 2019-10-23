@@ -10,8 +10,8 @@ IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analy
 <br>
 
 [![](./svgs/AMPL.svg)](https://github.com/trending?l=AMPL)
-<b>
-* Note: for Seurat3 please see Seurat3_code folder</font></b>
+* Note: for Seurat3 please see Seurat3_code folder
+
 <br>
 
 
