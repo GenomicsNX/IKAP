@@ -10,7 +10,7 @@ IKAP – Identifying K mAjor cell Population groups in single-cell RNA-seq analy
 <br>
 
 <b>
-* Note: for Seurat3 please see Seurat3_code folder
+  <pre>* Note: for Seurat3 please see Seurat3_code folder</pre>
 </b>
 <br>
 
