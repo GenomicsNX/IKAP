@@ -23,3 +23,25 @@ sobj <- IKAP(sobj, out.dir = "./IKAP")
 
 # save the Seurat object with IKAP results
 saveRDS(sobj,"./IKAP/sobj.rds")
+
+
+###### Example code for rerunning IKAP for a selected major group ######
+
+sobj <- readRDS("./IKAP/sobj.rds")
+
+# suppose you want to rerun IKAP for cluster 2 using clustering PC10K8
+# subset the data to select cells in cluster 2 using clustering PC10K8
+sobj.PC10K8C2 <- subset(sobj, subset = PC10K8 == "2")
+
+# remove all clustering generated from the previous IKAP run in the Seurat metadata
+sobj.PC10K8C2@meta.data <- sobj.PC10K8C2@meta.data[,-grep("^PC",colnames(sobj.PC10K8C2@meta.data))]
+
+# remove variable genes identified in the previous IKAP run
+VariableFeatures(sobj.PC10K8C2) <- c()
+
+# run IKAP for the subsetted data
+sobj.PC10K8C2 <- IKAP(sobj.PC10K8C2, out.dir = "./IKAP/PC10K8C2")
+
+# save the Seurat object
+saveRDS(sobj.PC10K8C2,"./IKAP/PC10K8C2/sobj.rds")
+
