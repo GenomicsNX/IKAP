@@ -63,7 +63,7 @@ BottomUpMerge <- function(sobj, k.max, npc, random.seed){
   clusterings <- list()
   
   clust.r <- 1.0
-  sobj <- FindNeighbors(sobj, reduction.type = "pca", dims = 1:npc, verbose = FALSE)
+  sobj <- FindNeighbors(sobj, reduction = "pca", dims = 1:npc, verbose = FALSE)
   sobj <- FindClusters(sobj, resolution = clust.r, random.seed = random.seed, verbose = FALSE)
   
   cat("Iteration for nPC =",npc,", r = 1.0")
@@ -158,6 +158,7 @@ ComputeMarkers <- function(sobj, gap.gain, candidates, out.dir){
     
     sobj.markers$AUROC <- NA
     for(j in 1:nrow(sobj.markers)){
+      # May need to change to use another slot for analysis
       sobj.markers$AUROC[j] <- roc.curve(scores.class0 = GetAssayData(sobj)[sobj.markers$gene[j],], weights.class0 = sobj@active.ident == sobj.markers$cluster[j])$auc
     }
     
@@ -185,9 +186,11 @@ DecisionTree <- function(sobj, markers, out.dir, plot.decision.tree){
       if(length(genes.candidate) == 0){
         next
       } else if(length(genes.candidate) == 1){
+        # May need to change to use another slot for analysis
         data <- data.frame(as.factor(sobj@meta.data[[candidate]] == clust), as.numeric(GetAssayData(sobj)[genes.candidate,]))
         colnames(data) <- c("label", genes.candidate)
       } else {
+        # May need to change to use another slot for analysis
         data <- as.data.frame(t(as.matrix(GetAssayData(sobj)[genes.candidate,])))
         data$label <- as.factor(sobj@meta.data[[candidate]] == clust)
       }
@@ -263,7 +266,12 @@ IKAP <- function(sobj, pcs = NA, pc.range = 20, k.max = NA, r.kmax.est = 1.5, ou
   
   dir.create(out.dir, recursive = T)
   
-  if(scale.data){
+  if(DefaultAssay(sobj) == "SCT" || (DefaultAssay(sobj) == "integrated" && sobj@commands$FindIntegrationAnchors$normalization.method == "SCT")){
+    cat("SCT or SCT-integrated data is used. Skip data scaling.\n")
+  }
+  
+  if(scale.data && DefaultAssay(sobj) != "SCT" &&
+     !(DefaultAssay(sobj) == "integrated" && sobj@commands$FindIntegrationAnchors$normalization.method == "SCT")){
     if(!all(confounders %in% colnames(sobj@meta.data))){
       warning(confounders[which(!confounders %in% colnames(sobj@meta.data))],"not in Seurat metadata: skipped for regression.\n")
     }
@@ -276,7 +284,13 @@ IKAP <- function(sobj, pcs = NA, pc.range = 20, k.max = NA, r.kmax.est = 1.5, ou
     else sobj <- ScaleData(sobj)
   }
   
-  if(find.var.features) sobj <- FindVariableFeatures(sobj, selection.method = "vst", nfeatures = 2000)
+  if(DefaultAssay(sobj) == "SCT" || DefaultAssay(sobj) == "integrated"){
+    cat("SCT or integrated data is used. Skip data variable feature finding.\n")
+  }
+  
+  if(find.var.features && DefaultAssay(sobj) != "SCT" && DefaultAssay(sobj) != "integrated"){
+    sobj <- FindVariableFeatures(sobj, selection.method = "vst", nfeatures = 2000)
+  }
 
   cat("Running PCA ... \n")
   if(is.na(pcs)){
@@ -294,11 +308,11 @@ IKAP <- function(sobj, pcs = NA, pc.range = 20, k.max = NA, r.kmax.est = 1.5, ou
   if(is.na(k.max)){
     cat("Determine k.max.\n")
     
-    sobj <- FindNeighbors(sobj, reduction.type = "pca", dims = 1:min(pcs), verbose = FALSE)
+    sobj <- FindNeighbors(sobj, reduction = "pca", dims = 1:min(pcs), verbose = FALSE)
     sobj <- FindClusters(sobj, resolution = r.kmax.est, random.seed = random.seed, verbose = FALSE)
     k.min.pc <- length(unique(sobj@active.ident))
     
-    sobj <- FindNeighbors(sobj, reduction.type = "pca", dims = 1:max(pcs), verbose = FALSE)
+    sobj <- FindNeighbors(sobj, reduction = "pca", dims = 1:max(pcs), verbose = FALSE)
     sobj <- FindClusters(sobj, resolution = r.kmax.est, random.seed = random.seed, verbose = FALSE)
     k.max.pc <- length(unique(sobj@active.ident))
     
